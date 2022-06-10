@@ -91,4 +91,4 @@ function myPokemonLoopFunction(pokemon){
     }
 }
 pokemonRepository.add(pokeRhydon);
-pokemonRepository.forEach(myPokemonLoopFunction);
+pokemonRepository.getAll().forEach(myPokemonLoopFunction);
