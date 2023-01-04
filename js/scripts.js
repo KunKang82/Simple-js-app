@@ -67,7 +67,7 @@ let pokemonRepository = (function () {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        loadlist: loadList,
+        loadList: loadList,
         loadDetails: loadDetails,
         showDetails: showDetails
     }
