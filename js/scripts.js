@@ -75,7 +75,7 @@ let pokemonRepository = (function () {
         })
     }
 
-    function showModal(pokemon, text, img) {
+    function showModal(pokemon) {
         // Clear all existing modal content
         modalContainer.innerHTML = '';
 
