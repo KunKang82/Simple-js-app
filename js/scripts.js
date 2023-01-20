@@ -2,7 +2,7 @@ let pokemonRepository = (function () {
     //pokemon array
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    // let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('#modal-container');
 
     //function to add new pokemons to the pokemonList array
     function add(pokemon) {
@@ -75,9 +75,7 @@ let pokemonRepository = (function () {
         })
     }
 
-    function showModal(title, text, img) {
-        let modalContainer = document.querySelector('#modal-container');
-
+    function showModal(pokemon) {
         // Clear all existing modal content
         modalContainer.innerHTML = '';
 
@@ -88,16 +86,16 @@ let pokemonRepository = (function () {
         let closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');
         closeButtonElement.innerText = 'Close';
-        closeButtonElement.addEventlistener('click', hideModal);
+        closeButtonElement.addEventListener('click', hideModal);
 
         let titleElement = document.createElement('h1');
-        titleElement.innerText = title;
+        titleElement.innerText = pokemon.name;
 
         let contentElement = document.createElement('p');
-        contentElement.innerText = text;
-        
+        contentElement.innerHTML = `Height: ${pokemon.height} <br> Type: ${pokemon.types.map(({type}) => type.name)}`;
+
         let imageElement = document.createElement('img');
-        imageElement.setAttribute('src', img);
+        imageElement.setAttribute('src', pokemon.imageUrl);
         imageElement.setAttribute('alt', "Pokemon image");
 
         modal.appendChild(closeButtonElement);
@@ -146,4 +144,3 @@ pokemonRepository.loadList().then(function () {
         pokemonRepository.addListItem(pokemon);
     });
 });
-
