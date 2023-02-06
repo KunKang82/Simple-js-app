@@ -1,9 +1,11 @@
 let pokemonRepository = (function () {
     //pokemon array
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=10';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     // let modalContainer = document.querySelector('#modal-container');
     let modalContainer = $('#modal-container');
+    
+
 
     //function to add new pokemons to the pokemonList array
     function add(pokemon) {
@@ -29,7 +31,7 @@ let pokemonRepository = (function () {
     function addListItem(pokemon) {
         let pokemonList = $('.pokemon-list');
         let listpokemon = $('<li class="group-list-item"></li>');//listItem
-        let button = $('<button type="button class="pokemon-button btn btn-primary" data-toggle="modal" data=target="#pokeModal">${pokemon.name}</button>');
+        let button = $('<button type="button class="pokemon-button btn btn-primary" data-toggle="modal" data=target="#pokeModal">' + pokemon.name + '</button>');
 
         listpokemon.append(button);
         pokemonList.append(listpokemon);
@@ -120,16 +122,16 @@ let pokemonRepository = (function () {
     // }
 
     function showModal(pokemon) {
-        let modalTitle = $('.modal-Title');
-        let modalBody = $('.modal-Body');
+        let modalTitle = $('.modal-title');
+        let modalBody = $('.modal-body');
 
-        modalBody.empty();
+        modalBody.empty();        
         modalTitle.text(pokemon.name);
 
-        modalBody.append('<img class="pokemon-img" src="${pokemon.imageUrl}">');
+        modalBody.append('<img class="modal-img" src="${pokemon.imageUrl}">');
         modalBody.append('<p>Height: ${pokemon.height}</p>');
         modalBody.append('<p>Types: ${pokemon.types}</p>');
-        modalBody.append('<p>Abilities: ${pokemon.abilities')
+        modalBody.append('<p>Abilities: ${pokemon.abilities</p>')
     }
 
     // document.querySelector('#show-modal').addEventListener('click', () => {
