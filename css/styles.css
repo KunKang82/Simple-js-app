@@ -1,6 +1,7 @@
 
 .navbar {
-  background-color: lightsteelblue;
+  background-color: rgb(115, 121, 128);
+  line-height: 1;
 }
 
 main {
@@ -10,88 +11,40 @@ main {
   text-align: center;
 }
 
+p {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 .pokemon-list {
     list-style-type: none;
-    /* display:grid; */
+    padding: 0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1600px;
   }
   
-  button:hover,
-  button:focus,
-  .button:hover,
-  .button:focus {
+  .pokemon-button {
+    margin: 5px;
+    width: 300px;
+    height: 50px;
+  }
+  
+  .pokemon-button:hover {
     cursor: pointer;
-    opacity: .8;
-  }
-
-.button-class {
-    background-color: green;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: 2px solid green;
-}
-
-#modal-container {
-    display: none;
-}
-
-#modal-container.is-visible {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-
-    /* to show it above other content */
-    z-index: 999;
-
-    /* to allow scrolling if the screen is not high enough*/
-    overflow: auto;
-
-    /* this is used to center the modal */
-    display: grid;
-    text-align: center;
-}
-  
-  .modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    width: 100%;
-    max-width: 500px;
-    text-align: left;
+    animation: button-shake 0.7s;
   }
   
-  .modal-close {
-    font-family: inherit;
-    float: right;
-    border: 0;
-    background: none;
-    color:#415d43;
-    text-decoration: underline;
+  @keyframes button-shake {
+    0% {transform: translateX(0)}
+    20% {transform: translateX(5px)}
+    40% {transform: translateX(-5px)}
+    60% {transform: translateX(5px)}
+    80% {transform: translateX(-5px)}
+    100% {transform: translateX(0)}
   }
   
-  .modal h1 {
-    margin-top: 10;
-    text-align: center;
-  }
   
-  .modal p {
-    margin-bottom: 0;
-  }
