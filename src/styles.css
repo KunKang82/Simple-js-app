@@ -1,0 +1,50 @@
+
+.navbar {
+  background-color: rgb(115, 121, 128);
+  line-height: 1;
+}
+
+main {
+  margin: 20px;
+  line-height: 1.5;
+  font-size: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pokemon-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1600px;
+  }
+  
+  .pokemon-button {
+    margin: 5px;
+    width: 300px;
+    height: 50px;
+  }
+  
+  .pokemon-button:hover {
+    cursor: pointer;
+    animation: button-shake 0.7s;
+  }
+  
+  @keyframes button-shake {
+    0% {transform: translateX(0)}
+    20% {transform: translateX(5px)}
+    40% {transform: translateX(-5px)}
+    60% {transform: translateX(5px)}
+    80% {transform: translateX(-5px)}
+    100% {transform: translateX(0)}
+  }
+  
+  
